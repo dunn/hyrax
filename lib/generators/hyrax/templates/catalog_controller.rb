@@ -41,7 +41,7 @@ class CatalogController < ApplicationController
     config.add_facet_field solr_name("keyword", :facetable), label: "Keyword", limit: 5
     config.add_facet_field solr_name("subject", :facetable), label: "Subject", limit: 5
     config.add_facet_field solr_name("language", :facetable), label: "Language", limit: 5
-    config.add_facet_field solr_name("based_near", :facetable), label: "Location", limit: 5
+    config.add_facet_field solr_name("based_near_label", :facetable), label: "Location", limit: 5
     config.add_facet_field solr_name("publisher", :facetable), label: "Publisher", limit: 5
     config.add_facet_field solr_name("file_format", :facetable), label: "File Format", limit: 5
     config.add_facet_field solr_name('member_of_collections', :symbol), limit: 5, label: 'Collections'
@@ -66,7 +66,7 @@ class CatalogController < ApplicationController
     config.add_index_field solr_name("proxy_depositor", :symbol), label: "Depositor", helper_method: :link_to_profile
     config.add_index_field solr_name("depositor"), label: "Owner", helper_method: :link_to_profile
     config.add_index_field solr_name("publisher", :stored_searchable), label: "Publisher", itemprop: 'publisher', link_to_search: solr_name("publisher", :facetable)
-    config.add_index_field solr_name("based_near", :stored_searchable), label: "Location", itemprop: 'contentLocation', link_to_search: solr_name("based_near", :facetable)
+    config.add_index_field solr_name("based_near_label", :stored_searchable), label: "Location", itemprop: 'contentLocation', link_to_search: solr_name("based_near_label", :facetable)
     config.add_index_field solr_name("language", :stored_searchable), label: "Language", itemprop: 'inLanguage', link_to_search: solr_name("language", :facetable)
     config.add_index_field solr_name("date_uploaded", :stored_sortable, type: :date), label: "Date Uploaded", itemprop: 'datePublished', helper_method: :human_readable_date
     config.add_index_field solr_name("date_modified", :stored_sortable, type: :date), label: "Date Modified", itemprop: 'dateModified', helper_method: :human_readable_date
@@ -87,7 +87,7 @@ class CatalogController < ApplicationController
     config.add_show_field solr_name("creator", :stored_searchable), label: "Creator"
     config.add_show_field solr_name("contributor", :stored_searchable), label: "Contributor"
     config.add_show_field solr_name("publisher", :stored_searchable), label: "Publisher"
-    config.add_show_field solr_name("based_near", :stored_searchable), label: "Location"
+    config.add_show_field solr_name("based_near_label", :stored_searchable), label: "Location"
     config.add_show_field solr_name("language", :stored_searchable), label: "Language"
     config.add_show_field solr_name("date_uploaded", :stored_searchable), label: "Date Uploaded"
     config.add_show_field solr_name("date_modified", :stored_searchable), label: "Date Modified"
@@ -225,7 +225,7 @@ class CatalogController < ApplicationController
 
     config.add_search_field('based_near') do |field|
       field.label = "Location"
-      solr_name = solr_name("based_near", :stored_searchable)
+      solr_name = solr_name("based_near_label", :stored_searchable)
       field.solr_local_parameters = {
         qf: solr_name,
         pf: solr_name
