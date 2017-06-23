@@ -1,7 +1,7 @@
 module Sipity
   # Throughout the workflow process, a processed entity may have numerous
   # states.
-  class WorkflowState < ActiveRecord::Base
+  class WorkflowState < ApplicationRecord
     self.table_name = 'sipity_workflow_states'
 
     belongs_to :workflow,

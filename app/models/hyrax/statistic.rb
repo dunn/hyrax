@@ -1,5 +1,5 @@
 module Hyrax
-  class Statistic < ActiveRecord::Base
+  class Statistic < ApplicationRecord
     self.abstract_class = true
 
     class_attribute :cache_column, :event_type

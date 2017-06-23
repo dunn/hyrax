@@ -1,6 +1,6 @@
 module Sipity
   # An actor can take the given action
-  class WorkflowStateAction < ActiveRecord::Base
+  class WorkflowStateAction < ApplicationRecord
     self.table_name = 'sipity_workflow_state_actions'
     belongs_to :originating_workflow_state, class_name: 'Sipity::WorkflowState'
     belongs_to :workflow_action, class_name: 'Sipity::WorkflowAction'

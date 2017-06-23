@@ -1,5 +1,5 @@
 module Hyrax
-  class VersionCommitter < ActiveRecord::Base
+  class VersionCommitter < ApplicationRecord
     self.table_name = 'version_committers'
   end
 end

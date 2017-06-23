@@ -100,12 +100,6 @@ Style/ZeroLengthPredicate:
 Rails:
   Enabled: true
 
-Rails/ApplicationJob:
-  Enabled: false
-
-Rails/ApplicationRecord:
-  Enabled: false
-
 Rails/DynamicFindBy:
   Enabled: false
 

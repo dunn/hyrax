@@ -1,5 +1,5 @@
 module Hyrax
-  class Feature < ActiveRecord::Base
+  class Feature < ApplicationRecord
     self.table_name = 'hyrax_features'
   end
 end

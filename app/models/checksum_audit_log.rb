@@ -1,4 +1,4 @@
-class ChecksumAuditLog < ActiveRecord::Base
+class ChecksumAuditLog < ApplicationRecord
   def failed?
     !passed?
   end

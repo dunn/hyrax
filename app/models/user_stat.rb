@@ -1,2 +1,2 @@
-class UserStat < ActiveRecord::Base
+class UserStat < ApplicationRecord
 end

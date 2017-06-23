@@ -8,7 +8,7 @@ module Sipity
   #   :notifiable_contexts relation)
   #
   # @see Hyrax::Forms::WorkflowActionForm
-  class WorkflowAction < ActiveRecord::Base
+  class WorkflowAction < ApplicationRecord
     self.table_name = 'sipity_workflow_actions'
 
     belongs_to :workflow, class_name: 'Sipity::Workflow'

@@ -3,7 +3,7 @@ module Sipity
   # calling this a Type, but once I extracted the Processing submodule,
   # type felt to much of a noun, not conveying potentiality. Workflow
   # conveys "things will happen" because of this.
-  class Workflow < ActiveRecord::Base
+  class Workflow < ApplicationRecord
     self.table_name = 'sipity_workflows'
 
     has_many :entities, dependent: :destroy, class_name: 'Sipity::Entity'

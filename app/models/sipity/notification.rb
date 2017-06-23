@@ -3,7 +3,7 @@ module Sipity
   # context; I believe the context is something that will be triggered via
   # an action however, I don't believe this needs to be a "hard"
   # relationship. It is instead a polymorphic relationship.
-  class Notification < ActiveRecord::Base
+  class Notification < ApplicationRecord
     self.table_name = 'sipity_notifications'
 
     has_many :notifiable_contexts,

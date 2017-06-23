@@ -1,6 +1,6 @@
 module Hyrax
   # The database storage of inter-related jobs and their states.
-  class Operation < ActiveRecord::Base
+  class Operation < ApplicationRecord
     PENDING = 'pending'.freeze
     PERFORMING = 'performing'.freeze
     FAILURE = 'failure'.freeze

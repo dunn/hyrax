@@ -16,7 +16,7 @@ module Sipity
   #     reason_for_notification: 'on_enter',
   #     notification: notification
   #   )
-  class NotifiableContext < ActiveRecord::Base
+  class NotifiableContext < ApplicationRecord
     self.table_name = 'sipity_notifiable_contexts'
     belongs_to :scope_for_notification, polymorphic: true
     belongs_to :notification, class_name: 'Sipity::Notification'

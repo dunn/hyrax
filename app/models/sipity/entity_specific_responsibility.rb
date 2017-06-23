@@ -12,7 +12,7 @@ module Sipity
   #   to review all ETDs submitted.
   #
   # @see Sipity::WorkflowResponsibility
-  class EntitySpecificResponsibility < ActiveRecord::Base
+  class EntitySpecificResponsibility < ApplicationRecord
     self.table_name = 'sipity_entity_specific_responsibilities'
     belongs_to :entity, class_name: 'Sipity::Entity'
     belongs_to :workflow_role, class_name: 'Sipity::WorkflowRole'

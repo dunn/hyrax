@@ -21,7 +21,7 @@ module Sipity
   #
   # @see Sipity::Agent
   # @see Hyrax::Configuration
-  class Role < ActiveRecord::Base
+  class Role < ApplicationRecord
     self.table_name = 'sipity_roles'
 
     has_many :workflow_roles,

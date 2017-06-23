@@ -15,7 +15,7 @@ module Sipity
   #
   # @see Sipity::Role for discussion of roles
   # @see Sipity::EntitySpecificResponsibility
-  class WorkflowResponsibility < ActiveRecord::Base
+  class WorkflowResponsibility < ApplicationRecord
     self.table_name = 'sipity_workflow_responsibilities'
     belongs_to :agent, class_name: 'Sipity::Agent'
     belongs_to :workflow_role, class_name: 'Sipity::WorkflowRole'

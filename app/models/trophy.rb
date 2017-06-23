@@ -1,4 +1,4 @@
-class Trophy < ActiveRecord::Base
+class Trophy < ApplicationRecord
   validate :count_within_limit, on: :create
 
   def count_within_limit

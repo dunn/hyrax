@@ -9,7 +9,7 @@ module Sipity
   # @see ./lib/hyrax/specs/shared_specs/workflow_method.rb
   # @see Sipity::WorkflowAction
   # @see Hyrax::Workflow::ActionTakenService to see how this is used.
-  class Method < ActiveRecord::Base
+  class Method < ApplicationRecord
     self.table_name = 'sipity_workflow_methods'
     belongs_to :workflow_action, class_name: 'Sipity::WorkflowAction'
   end

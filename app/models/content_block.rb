@@ -1,4 +1,4 @@
-class ContentBlock < ActiveRecord::Base
+class ContentBlock < ApplicationRecord
   # The keys in this registry are "public" names for collaborator
   # objects, and the values are reserved names of ContentBlock
   # instances, which Hyrax uses as identifiers. Values also correspond

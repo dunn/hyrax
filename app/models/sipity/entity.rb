@@ -5,7 +5,7 @@ module Sipity
   #
   # The goal is to keep this behavior separate, so that we can possibly
   # extract the information.
-  class Entity < ActiveRecord::Base
+  class Entity < ApplicationRecord
     self.table_name = 'sipity_entities'
 
     belongs_to :workflow, class_name: 'Sipity::Workflow'
